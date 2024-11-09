@@ -20,7 +20,7 @@ subroutine elipse( a , b , L_x , L_y , area )
             num_hits = num_hits + 1
         endif
     enddo
-    area = real(num_hits,kind=dp)/real(num_trials,kind=dp)
+    area = real(num_hits,kind=dp)/real(num_trials,kind=dp) * L_x * L_y
 end subroutine elipse
 
 subroutine hiperbole( a , b ) 
