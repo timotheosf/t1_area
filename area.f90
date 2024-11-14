@@ -18,10 +18,13 @@ if ( figure=='elips') then
     call write_params( L_x , L_y , figure , a , b )
     call elipse( a , b , L_x , L_y , area )
     print*, area
+
 else if ( figure=='circu' .or. figure=='circl' ) then
     call get_command_argument( 4 , arg ) ; read(arg,*) a ! Lê o primeiro argumento
     b=0.d0
-    call write_params( L_x , L_y , figure , a , b )
+    call write_params( L_x , L_y , figure , a , a )
+    call elipse( a , a , L_x , L_y , area )
+    print*, area
 
 else if ( figure=='hiper' ) then
     call get_command_argument( 4 , arg ) ; read(arg,*) a ! Lê o primeiro argumento
